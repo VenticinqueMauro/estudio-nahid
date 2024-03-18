@@ -12,7 +12,7 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="absolute bottom-0  container  px-3 pb-2 "
+            className="absolute bottom-0 container text-center  px-3 pb-2 "
         >
             <div className="flex items-center w-full lg:justify-center lg:px-3 pb-5 "
             >
@@ -40,7 +40,9 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
-            <p className="text-xs text-zinc-500 text-center">© 2024 <Link href='https://wa.me/+5493816160976?text=¡Hola!%20Estoy%20interesado/a%20en%20tus%20servicios.%20¿Podemos%20conversar%3F' target="_blank"><b className="hover:text-zinc-300">MVDev.</b></Link> Todos los derechos reservados.</p>
+            <a className="text-xs text-zinc-500 " href='https://wa.me/+5493816160976?text=¡Hola!%20Estoy%20interesado/a%20en%20tus%20servicios.%20¿Podemos%20conversar%3F' target="_blank">
+                    © 2024 <b className="hover:text-zinc-300">MVDev.</b> Todos los derechos reservados.
+            </a>
         </motion.footer>
     )
 }

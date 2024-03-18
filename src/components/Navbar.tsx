@@ -14,7 +14,7 @@ const menuVariants: Variants = {
         x: 0,
         transition: {
             duration: 0.3,
-            staggerChildren: 0.3, 
+            staggerChildren: 0.3,
         },
     },
 };
@@ -29,6 +29,8 @@ const menuItemVariants: Variants = {
         opacity: 1,
     },
 };
+
+const menuItems = ['inicio', 'nosotros', 'casos de éxito', 'consulta tu caso', 'contacto'];
 
 export default function Navbar() {
 
@@ -46,11 +48,12 @@ export default function Navbar() {
             </p>
             {/* DESKTOP  */}
             <ul className="hidden md:flex items-center uppercase gap-10 md:text-xs lg:text-sm text-zinc-300">
-                <li className="cursor-pointer hover:text-white duration-200" >Inicio</li>
-                <li className="cursor-pointer hover:text-white duration-200" >Nosotros</li>
-                <li className="cursor-pointer hover:text-white duration-200" >Casos de éxito</li>
-                <li className="cursor-pointer hover:text-white duration-200" >Consulta tu caso</li>
-                <li className="cursor-pointer hover:text-white duration-200" >Contacto</li>
+                {
+                    menuItems.map((item) => (
+                        <li key={item} className="cursor-pointer hover:text-white duration-200" >{item}</li>
+
+                    ))
+                }
             </ul>
 
             {/* MOBILE  */}
@@ -78,36 +81,17 @@ export default function Navbar() {
                 initial="hidden"
                 animate={isOpen ? "visible" : "hidden"}
             >
-                <motion.li
-                    className="cursor-pointer hover:text-white duration-200"
-                    variants={menuItemVariants}
-                >
-                    Inicio
-                </motion.li>
-                <motion.li
-                    className="cursor-pointer hover:text-white duration-200"
-                    variants={menuItemVariants}
-                >
-                    Nosotros
-                </motion.li>
-                <motion.li
-                    className="cursor-pointer hover:text-white duration-200"
-                    variants={menuItemVariants}
-                >
-                    Casos de éxito
-                </motion.li>
-                <motion.li
-                    className="cursor-pointer hover:text-white duration-200"
-                    variants={menuItemVariants}
-                >
-                    Consulta tu caso
-                </motion.li>
-                <motion.li
-                    className="cursor-pointer hover:text-white duration-200"
-                    variants={menuItemVariants}
-                >
-                    Contacto
-                </motion.li>
+                {
+                    menuItems.map((item) => (
+                        <motion.li
+                            key={item}
+                            className="cursor-pointer hover:text-white duration-200"
+                            variants={menuItemVariants}
+                        >
+                            {item}
+                        </motion.li>
+                    ))
+                }
             </motion.ul>
         </motion.nav>
     )
