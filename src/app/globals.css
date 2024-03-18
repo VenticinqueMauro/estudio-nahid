@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#191C1D] text-zinc-50 flex justify-center items-center mx-auto py-3 lg:py-6 relative min-h-screen;
+  @apply bg-[#191C1D] text-zinc-50 flex justify-center items-center mx-auto py-3 lg:py-6 relative min-h-screen lg:overflow-hidden;
 }
 
 .title {
