@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 
 const menuVariants: Variants = {
@@ -43,15 +44,14 @@ export default function Navbar() {
             transition={{ delay: 1, duration: 0.5 }}
             className="absolute top-0 z-10 max-w-7xl mx-auto  flex items-center w-full justify-between px-3 pt-8 pb-5 backdrop-blur md:border-b md:border-b-[#0B6C71]/50"
         >
-            <p className="font-bold  lg:text-xl tracking-tight uppercase z-50">
+            <Link href='/' className="font-bold  lg:text-xl tracking-tight uppercase z-50">
                 Nahid & Asociados
-            </p>
+            </Link>
             {/* DESKTOP  */}
             <ul className="hidden md:flex items-center uppercase gap-10 md:text-xs lg:text-sm text-zinc-300">
                 {
                     menuItems.map((item) => (
-                        <li key={item} className="cursor-pointer hover:text-white duration-200" >{item}</li>
-
+                        <li key={item} className="cursor-pointer hover:text-white duration-200">{item}</li>
                     ))
                 }
             </ul>
