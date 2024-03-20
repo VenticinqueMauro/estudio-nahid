@@ -1,11 +1,11 @@
 
 import type { Metadata } from "next";
-import { Noto_Serif_Kannada } from "next/font/google";
+import { Ubuntu } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 
-const noto = Noto_Serif_Kannada({ subsets: ["latin"] });
+const noto = Ubuntu({ subsets: ["latin"], weight: ['300', '400', '500', '700'] });
 
 export const metadata: Metadata = {
   title: "Nahid & Asociados",

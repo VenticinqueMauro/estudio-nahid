@@ -31,7 +31,7 @@ const menuItemVariants: Variants = {
     },
 };
 
-const menuItems = ['inicio', 'nosotros', 'casos de éxito', 'consulta tu caso', 'contacto'];
+const menuItems = ['inicio', 'nosotros', 'casos de éxito', 'contacto'];
 
 export default function Navbar() {
 
