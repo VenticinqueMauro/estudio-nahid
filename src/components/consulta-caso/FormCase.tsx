@@ -73,7 +73,7 @@ export default function FormCase() {
                         </h3>
                         <p className="font-bold text-lg text-cyan-800">{dataCase?.stageMessage?.title}</p>
                         <div>
-                            <p><span className="text-cyan-800">Etapa:</span> {dataCase?.stage}/14</p>
+                            <p><span className="text-cyan-800">Etapa:</span> <b>{dataCase?.stage}</b>/14</p>
                             <p><span className="text-cyan-800">Descripcion:</span> {dataCase?.stageMessage?.message}</p>
                             {dataCase?.observation && <p><b>Descripción:</b> {dataCase.observation}</p>}
                         </div>
