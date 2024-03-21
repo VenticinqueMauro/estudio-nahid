@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import ConsultaCaso from "./ConsultaCaso";
 
 const menuVariants: Variants = {
     hidden: {
@@ -54,6 +55,7 @@ export default function Navbar() {
                         <li key={item} className="cursor-pointer hover:text-white duration-200">{item}</li>
                     ))
                 }
+                <ConsultaCaso />
             </ul>
 
             {/* MOBILE  */}

@@ -2,19 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-[#191C1D] text-zinc-50 flex justify-center items-center mx-auto py-3 lg:py-6 relative min-h-screen lg:overflow-hidden;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#191C1D] text-zinc-50 flex justify-center items-center mx-auto py-3 lg:py-6 relative min-h-screen lg:overflow-hidden;
+  }
 }
-
-.title {
-  @apply text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-zinc-100 to-zinc-400 py-8;
-}
-
-.text-primary{
-  @apply text-[#0B6C71]
-}
-
-.bg-primary{
-  @apply bg-[#0B6C71]
-}
-
