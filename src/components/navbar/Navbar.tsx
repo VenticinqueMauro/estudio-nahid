@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import ConsultaCaso from "./ConsultaCaso";
+import ConsultaCaso from "../consulta-caso/ConsultCase";
 
 const menuVariants: Variants = {
     hidden: {
