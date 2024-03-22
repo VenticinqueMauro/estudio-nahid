@@ -7,7 +7,9 @@ import {
 } from "@/components/ui/dialog";
 import dynamic from "next/dynamic";
 
-const FormCase = dynamic(() => import("./FormCase"));
+const FormCase = dynamic(() => import("./FormCase"), {
+    loading: () => <div className="block animate-pulse w-full h-[120px] rounded bg-gray-300"></div>,
+});
 
 export default function ConsultCase() {
 
@@ -25,7 +27,7 @@ export default function ConsultCase() {
             </DialogTrigger>
             <DialogContent className="bg-zinc-100 text-zinc-950">
                 <DialogHeader className="pt-5">
-                    <DialogTitle className="text-center text-lg text-cyan-800">Consulta el estado de tu caso</DialogTitle>
+                    <DialogTitle className="text-center text-lg lg:text-xl text-cyan-800">Consulta el estado de tu caso</DialogTitle>
                     <div className="text-sm">
                         <FormCase />
                     </div>
