@@ -4,8 +4,9 @@ import { Ubuntu } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { Toaster } from "sonner";
 
-const noto = Ubuntu({ subsets: ["latin"], weight: ['300', '400', '500', '700'] });
+const ubuntu = Ubuntu({ subsets: ["latin"], weight: ['300', '400', '500', '700'] });
 
 export const metadata: Metadata = {
   title: "Nahid & Asociados",
@@ -19,10 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={noto.className}>
+      <body className={ubuntu.className}>
         <Navbar />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

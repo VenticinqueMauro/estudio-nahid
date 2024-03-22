@@ -13,9 +13,9 @@ export async function GET(request: NextRequest, { params }: { params: { dni: str
         const caseData = await Case.findOne({ dni });
 
         if (!caseData) {
-            return NextResponse.json({ error: 'Caso no encontrado' }, { status: 404 });
+            return NextResponse.json({ error: 'DNI no encontrado' }, { status: 404 });
         } else {
-            return NextResponse.json(caseData, { status: 200 });
+            return NextResponse.json({ message: 'Caso encontrado con éxito', case: caseData }, { status: 200 });
         }
     } catch (error) {
         if (error instanceof Error) {
