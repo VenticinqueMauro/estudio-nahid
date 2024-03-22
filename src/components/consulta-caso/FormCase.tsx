@@ -32,10 +32,11 @@ export default function FormCase() {
             const data = await response.json();
             setDataCase(data.case);
             setShowCaseData(true);
-            toast.success('¡Información del caso obtenida exitosamente!');
+            toast.success(data.message);
         } catch (error) {
-            console.error('Error al realizar la consulta:', error);
-            toast.error('Error al obtener la información del caso');
+            if (error instanceof Error) {
+                toast.error(error.message);
+            }
         }
     }
 
@@ -50,11 +51,11 @@ export default function FormCase() {
     return (
         <>
             <p className="text-start text-xs lg:text-sm">Ingresa tu <b>número de DNI</b> para conocer en qué etapa se encuentra tu proceso legal en solo unos segundos.</p>
-            <form onSubmit={handleSubmit} className="flex gap-2 mt-4 mb-2">
+            <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-2 mt-4 mb-2">
                 <Input
                     name='dni'
                     placeholder="Ej: 45637821"
-                    className="w-fit placeholder:text-zinc-400 rounded border-zinc-500"
+                    className="w-full lg:w-fit placeholder:text-zinc-400 rounded border-zinc-500"
                     value={dni}
                     onChange={handleChange}
                     pattern="[0-9]+"
@@ -68,7 +69,7 @@ export default function FormCase() {
                 </button>
             </form>
             {error && <p className="text-red-500">{error}</p>}
-            <Link href='#' className="text-xs ms-auto block text-start text-cyan-700 hover:text-cyan-800">¿Cuáles son los posibles estados de mi caso?</Link>
+            <Link href='#' className="text-xs  text-cyan-700 hover:text-cyan-800">¿Cuáles son los posibles estados de mi caso?</Link>
             <AnimatePresence>
                 {showCaseData && (
                     <motion.div

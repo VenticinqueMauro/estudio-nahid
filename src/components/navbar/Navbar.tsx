@@ -4,7 +4,7 @@ import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import ConsultaCaso from "../consulta-caso/ConsultCase";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const menuVariants: Variants = {
     hidden: {
@@ -21,6 +21,7 @@ const menuVariants: Variants = {
         },
     },
 };
+
 
 const menuItemVariants: Variants = {
     hidden: {
@@ -46,7 +47,7 @@ export default function Navbar() {
             transition={{ delay: 1, duration: 0.5 }}
             className="absolute top-0 z-10 max-w-7xl mx-auto  flex items-center w-full justify-between px-3 pt-5 lg:pt-8 pb-2 lg:pb-5 backdrop-blur md:border-b md:border-b-cyan-800/50"
         >
-            <Link href='/' className="lg:text-lg text-zinc-500 tracking-tight uppercase z-50">
+            <Link href='/' className="text-lg text-zinc-100 lg:text-zinc-300 tracking-tight uppercase z-50">
                 Nahid & Asociados
             </Link>
             {/* DESKTOP  */}
@@ -61,7 +62,7 @@ export default function Navbar() {
 
             {/* MOBILE  */}
             <div onClick={() => setIsOpen(!isOpen)} className="z-50 md:hidden">
-                <Menu size={29}/>
+                {isOpen ? <X size={29} /> : <Menu size={29} />}
             </div>
             <motion.ul
                 className="w-full md:hidden h-screen z-40 absolute top-0 left-0 backdrop-blur-md bg-black/90 pt-32  gap-5 font-bold text-lg flex-col flex items-center uppercase"
