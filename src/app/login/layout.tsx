@@ -20,7 +20,7 @@ export default function LoginLayout({ children }: { children: ReactNode }) {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
+        <div className="flex flex-col items-center justify-center">
             {children}
             <Toaster />
         </div>
