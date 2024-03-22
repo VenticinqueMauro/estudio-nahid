@@ -22,22 +22,30 @@ export default function FormCase() {
             return;
         }
 
-        try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/case/${dni}`);
+        toast.promise(
+            async () => {
+                try {
+                    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/case/${dni}`);
 
-            if (!response.ok) {
-                throw new Error('No se pudo obtener la información del caso');
-            }
+                    if (!response.ok) {
+                        throw new Error('No se pudo obtener la información del caso');
+                    }
 
-            const data = await response.json();
-            setDataCase(data.case);
-            setShowCaseData(true);
-            toast.success(data.message);
-        } catch (error) {
-            if (error instanceof Error) {
-                toast.error(error.message);
+                    const data = await response.json();
+                    setDataCase(data.case);
+                    setShowCaseData(true);
+                    toast.success(data.message);
+                } catch (error) {
+                    if (error instanceof Error) {
+                        toast.error(error.message);
+                    }
+                }
+            },
+            {
+                loading: 'Loading...',
+                error: (error) => error.message,
             }
-        }
+        );
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
