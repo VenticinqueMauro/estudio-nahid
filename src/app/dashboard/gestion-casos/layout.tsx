@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function GestionCasosLayout({ children }: { children: ReactNode }) {
 
     return (
-        <div className="w-full h-full">
+        <div className="w-full">
             {children}
         </div>
     )
