@@ -41,6 +41,9 @@ export default function FormCreateCases() {
         } else {
             toast.warning(result);
         }
+
+        formData = new FormData();
+
     }
 
 
