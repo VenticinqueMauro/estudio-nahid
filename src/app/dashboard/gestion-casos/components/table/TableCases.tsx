@@ -1,3 +1,4 @@
+import InfoCases from "../info/InfoCases";
 import NavbarGestionCasos from "../navbar/Navbar.gestionCasos";
 import { CaseTable, columns } from "./Columns";
 import { DataTable } from "./Data-table";
@@ -24,6 +25,7 @@ export default async function TableCases() {
     return (
         <div className="lg:px-6">
             <NavbarGestionCasos />
+            <InfoCases data={data} />
             <DataTable columns={columns} data={data} />
         </div>
     )
