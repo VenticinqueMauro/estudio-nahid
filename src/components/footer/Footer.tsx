@@ -13,7 +13,7 @@ export default function Footer() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className={`${pathname === '/dashboard' && 'hidden'} absolute bottom-0 container text-center  px-3 pb-2 `}
+            className={`${pathname.includes('/dashboard') && 'hidden'} absolute bottom-0 container text-center  px-3 pb-2 `}
         >
             <div className="flex items-center w-full lg:justify-center lg:px-3 pb-5 "
             >

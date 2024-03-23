@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
 
         await newCaseData.save();
 
-        return NextResponse.json({ message: 'Registro de caso exitoso' }, { status: 201 });
+        return NextResponse.json({ message: 'Registro de caso exitoso',  }, { status: 201 });
 
     } catch (error) {
         if (error instanceof Error) {

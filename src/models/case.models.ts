@@ -5,7 +5,8 @@ const caseSchema = new Schema({
         type: String,
         required: true,
         unique: true,
-    },
+        maxlength: [8, 'Excediste la cantidad de caracteres permitidos en el campo DNI'],
+    },    
     stage: {
         type: Number,
         required: true,

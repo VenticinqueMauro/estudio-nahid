@@ -1,7 +1,14 @@
-import React from 'react'
-
-export default function page() {
+export default function Page() {
     return (
-        <div>Dashboard</div>
+        <div className='flex items-center justify-center flex-grow'>
+            <div className="text-center">
+                <h1>
+                    ¡Bienvenido al Panel de Administración!
+                </h1>
+                <h2>
+                    Desde aquí podrás gestionar todas tus funcionalidades.
+                </h2>
+            </div>
+        </div>
     )
 }
