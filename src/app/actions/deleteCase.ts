@@ -2,16 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 
-export const handleCreateCase = async (formData: FormData) => {
-
-    const dni = formData.get('dni');
-    const stage = formData.get('stage');
-    const observation = formData.get('observation');
+export const handleDeleteCase = async (dni: string) => {
 
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/case`, {
-            method: 'POST',
-            body: JSON.stringify({ dni, stage, observation }),
+        const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/case/${dni}`, {
+            method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -29,9 +24,5 @@ export const handleCreateCase = async (formData: FormData) => {
         if (error instanceof Error) {
             return error.message
         }
-    } finally {
-        formData.delete('dni');
-        formData.delete('stage');
     }
-
 }

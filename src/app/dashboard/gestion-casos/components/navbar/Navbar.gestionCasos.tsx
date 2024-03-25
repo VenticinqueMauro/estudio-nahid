@@ -5,7 +5,7 @@ import ButtonDeleteAllCases from "../form-cases/Modal.DeleteAllCases";
 export default function NavbarGestionCasos() {
 
     return (
-        <nav className="sticky top-0 left-0 py-6 w-full flex justify-between text-sm bg-white/50 backdrop-blur z-10">
+        <nav className="sticky top-0 left-0 pt-6 pb-3 w-full flex justify-between text-sm bg-white/50 backdrop-blur z-10">
             <ModalCreate />
             <ButtonDeleteAllCases />
         </nav>

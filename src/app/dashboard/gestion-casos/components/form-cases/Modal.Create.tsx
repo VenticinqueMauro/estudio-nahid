@@ -6,12 +6,8 @@ import {
     DialogTrigger
 } from "@/components/ui/dialog";
 import { FolderPlus } from "lucide-react";
-import dynamic from "next/dynamic";
 import FormCreateCases from "./Form.CreateCases";
 
-// const FormCase = dynamic(() => import("./FormCase"), {
-//     loading: () => <div className="block animate-pulse w-full h-[120px] rounded bg-gray-300"></div>,
-// });
 
 export default function ModalCreate() {
 

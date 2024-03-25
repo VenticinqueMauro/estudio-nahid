@@ -5,7 +5,7 @@ import { DataTable } from "./Data-table";
 
 async function getData(): Promise<CaseTable[]> {
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/case`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/case`, {cache: 'no-store'})
 
     const data = await response.json();
 

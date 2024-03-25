@@ -15,7 +15,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 
 
     return (
-        <div className="bg-zinc-50 text-zinc-950 w-full absolute top-0 left-0">
+        <div className="bg-zinc-50 text-zinc-950 w-full h-full absolute top-0 left-0 overflow-y-scroll">
             <main className="flex flex-col lg:flex-row lg:flex-grow">
                 <Sidebar />
                 {children}

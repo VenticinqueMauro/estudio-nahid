@@ -9,9 +9,10 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 
-const stages = [
+export const stages = [
     { stage: 1, title: 'DEMANDA - Inicio del Juicio' },
     { stage: 2, title: 'AMPLIACIÓN DE DEMANDA' },
     { stage: 3, title: 'CUMPLIMIENTO DE RECAUDOS' },
@@ -28,7 +29,6 @@ const stages = [
     { stage: 14, title: 'INTERESES' }
 ]
 
-
 export default function FormCreateCases() {
 
     async function ClientAction(formData: FormData) {
@@ -42,8 +42,6 @@ export default function FormCreateCases() {
             toast.warning(result);
         }
 
-        formData = new FormData();
-
     }
 
 
@@ -52,12 +50,14 @@ export default function FormCreateCases() {
             className="max-w-sm space-y-4 mx-auto mt-5"
             action={ClientAction}
         >
-            <Input
-                name='dni'
-                placeholder="Numero de DNI"
-                className="w-full placeholder:text-zinc-900 rounded border-zinc-200 border-2"
-                pattern="[0-9]+"
-            />
+            <div>
+                <Input
+                    name='dni'
+                    placeholder="Numero de DNI"
+                    className="w-full placeholder:text-zinc-900 rounded border-zinc-200 border-2"
+                    pattern="[0-9]+"
+                />
+            </div>
             <Select name="stage">
                 <SelectTrigger className="w-full  rounded border-zinc-200 border-2">
                     <SelectValue placeholder="Etapa del caso" />
@@ -70,6 +70,11 @@ export default function FormCreateCases() {
                     }
                 </SelectContent>
             </Select>
+            <Textarea
+                name='observation'
+                className="w-full  rounded border-zinc-200 border-2"
+                placeholder="Observaciones (opcional)"
+            />
             <button className="w-full text-center py-2 shadow-zinc-400 shadow text-white bg-cyan-700 rounded hover:bg-cyan-800">Crear</button>
         </form>
     )

@@ -10,6 +10,8 @@ import { toast } from "sonner";
 export default function ModalDeleteAllCases() {
     const [verificationText, setVerificationText] = useState('');
 
+    
+
     async function handleDelete() {
         if (verificationText.trim() === 'eliminartodos') {
             const result = await handleDeleteAllcases();
@@ -42,10 +44,11 @@ export default function ModalDeleteAllCases() {
                             <Trash2 size={20} />
                             Borrar todos los casos
                         </span>
-                        <span className='text-base text-zinc-700'>⚠️ Esta accion es permanente y no se puede deshacer</span>
-                    </DialogTitle>
+                        <span className="py-2 text-center text-zinc-950 font-normal text-base">
+                            ⚠️ Esta acción es irreversible y no se puede deshacer.<br /> ¿Está seguro de continuar?
+                        </span>                    </DialogTitle>
                     <div className="text-sm mt-10 space-y-3">
-                        <p>Ingrese <b>eliminartodos</b> para confirmar</p>
+                        <p className='bg-zinc-50 rounded p-2 shadow'>Ingrese <b>eliminartodos</b> para confirmar</p>
                         <Input
                             type="text"
                             value={verificationText}

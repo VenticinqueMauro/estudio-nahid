@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function DELETE() {
     try {
-        cookies().delete('PR_app')
+        cookies().delete('nahid_app')
 
         return NextResponse.json({ message: 'Logout successfully' }, { status: 200 });
 

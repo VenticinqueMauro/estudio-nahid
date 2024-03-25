@@ -6,7 +6,7 @@ interface Props {
 
 export default function InfoCases({ data }: Props) {
     return (
-        <div className="text-xs text-zinc-500 flex justify-between gap-1 bg-zinc-50 p-2 rounded shadow">
+        <div className="text-xs text-zinc-500 hidden lg:flex justify-between gap-1 bg-zinc-50 p-2 rounded shadow ">
             <p><b className="text-zinc-600 ">Casos totales: </b>{data.length}</p>
             <ul className="flex">
                 {Array.from(new Set(data.map(caso => caso.stage)))

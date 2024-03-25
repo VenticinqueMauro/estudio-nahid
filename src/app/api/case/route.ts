@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
 
     } catch (error) {
         if (error instanceof Error) {
-            return NextResponse.json({ error: `Falló el registro del caso: ${error.message}` }, { status: 500 });
+            return NextResponse.json({ error: `${error.message}` }, { status: 500 });
         } else {
             return NextResponse.json({ error: 'Ocurrió un error inesperado' }, { status: 500 });
         }
